@@ -9,7 +9,7 @@ The skill guides a coding agent to inspect relevant code, explain the change, an
 Install into the coding agents on your machine with the [`skills`](https://github.com/vercel-labs/skills) CLI. It asks which agents to install into, and whether to install globally or just for the current project:
 
 ```sh
-npx skills add git@github.com:<your-user>/code-learner.git
+npx skills add git@github.com:pedrotalaia/code-learner.git
 ```
 
 This is a private repository, so the command uses your local git credentials (SSH key or `gh auth login`).
