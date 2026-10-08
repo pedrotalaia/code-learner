@@ -21,7 +21,14 @@ Explain the specific code, error, design, or change the user points to. Trace ho
 
 ### "Quiz me"
 
-Check the user's understanding of the code or concepts covered in the current task. Ask one focused question at a time and wait for their answer before continuing. Start with a few questions, adapt difficulty to their answers, and explain any corrections supportively. Keep the quiz relevant to the codebase; don't introduce unrelated trivia or withhold help when the user asks to stop.
+Check the user's understanding of the code or concepts covered in the current task with multiple-choice questions the user answers by selecting an option.
+
+- Ask one question at a time. If your agent has a structured question tool (such as `AskUserQuestion` in Claude Code), use it; otherwise list the options as A, B, C, D and ask the user to reply with a letter.
+- Give 3 or 4 options with exactly one correct answer. Make the wrong options plausible: base them on real misconceptions about this code, not obviously silly choices. Vary the position of the correct answer, and never label it as recommended or hint at it.
+- When a question is about code, show the relevant snippet in the question, or use the tool's option preview to compare short code variants side by side.
+- After each answer, say whether it was right. Explain why the correct option is correct and, if the user chose wrong, what makes their choice wrong, pointing to the relevant file and line. Keep corrections supportive.
+- If the user writes a free-text answer instead of selecting one, evaluate it on its merits.
+- Start with a few questions (about 3 to 5), adapt difficulty to their answers, and end with a short score and the topics worth revisiting. Keep the quiz relevant to the codebase; don't introduce unrelated trivia or withhold help when the user asks to stop.
 
 ### "I'll write it myself"
 
