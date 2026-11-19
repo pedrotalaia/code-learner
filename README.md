@@ -1,18 +1,23 @@
-```text
-  ____ ___  ____  _____   _     _____    _    ____  _   _ _____ ____
- / ___/ _ \|  _ \| ____| | |   | ____|  / \  |  _ \| \ | | ____|  _ \
-| |  | | | | | | |  _|   | |   |  _|   / _ \ | |_) |  \| |  _| | |_) |
-| |__| |_| | |_| | |___  | |___| |___ / ___ \|  _ <| |\  | |___|  _ <
- \____\___/|____/|_____| |_____|_____/_/   \_\_| \_\_| \_|_____|_| \_\
+```
+ ██████╗  ██████╗  ██████╗  ███████╗     ██╗      ███████╗  █████╗  ██████╗  ███╗   ██╗ ███████╗ ██████╗
+██╔════╝ ██╔═══██╗ ██╔══██╗ ██╔════╝     ██║      ██╔════╝ ██╔══██╗ ██╔══██╗ ████╗  ██║ ██╔════╝ ██╔══██╗
+██║      ██║   ██║ ██║  ██║ █████╗       ██║      █████╗   ███████║ ██████╔╝ ██╔██╗ ██║ █████╗   ██████╔╝
+██║      ██║   ██║ ██║  ██║ ██╔══╝       ██║      ██╔══╝   ██╔══██║ ██╔══██╗ ██║╚██╗██║ ██╔══╝   ██╔══██╗
+╚██████╗ ╚██████╔╝ ██████╔╝ ███████╗     ███████╗ ███████╗ ██║  ██║ ██║  ██║ ██║ ╚████║ ███████╗ ██║  ██║
+ ╚═════╝  ╚═════╝  ╚═════╝  ╚══════╝     ╚══════╝ ╚══════╝ ╚═╝  ╚═╝ ╚═╝  ╚═╝ ╚═╝  ╚═══╝ ╚══════╝ ╚═╝  ╚═╝
+                              ▶  L E A R N - B Y - D O I N G   S K I L L  ◀
 ```
 
-# Code Learner
+An agent skill for Claude Code and Codex that turns code changes into lessons:
+explanations, step-by-step guidance, quizzes, and reviews of the code you write yourself.
 
-Learn your way through code changes, one step at a time.
-
-**Code Learner** provides the [learn-by-doing skill](skills/learn-by-doing/SKILL.md) for coding agents. It helps you understand a codebase, work through a change yourself, and get feedback on what you write.
-
-You can also ask the agent to make a change while it explains what it is doing.
+> [!IMPORTANT]
+> **Requirements**
+> - A coding agent that supports skills — Claude Code, Codex, or others supported by the `skills` CLI
+> - `npx` (Node.js) — to install with the `skills` CLI
+> - Git access to this private repo — SSH key or `gh auth login`
+>
+> No other dependencies. The skill is plain Markdown instructions, and it never edits your files unless you ask it to.
 
 ## Install
 
@@ -21,8 +26,6 @@ Install into the coding agents on your machine with the [`skills`](https://githu
 ```sh
 npx skills add git@github.com:pedrotalaia/code-learner.git
 ```
-
-This is a private repository, so the command uses your local git credentials (SSH key or `gh auth login`).
 
 To install manually instead, copy or symlink `skills/learn-by-doing/` into your agent's skills directory, for example `~/.claude/skills/` for Claude Code or `~/.agents/skills/` for Codex.
 
@@ -40,3 +43,6 @@ Ask your coding agent in your own words. These prompts show the different ways t
 | Get a change made while learning | “Do it but teach me: add a loading state to this page.” | Makes the requested change, runs targeted checks, and explains the important decisions. |
 
 When you want to write the change yourself, the agent guides and reviews you instead of editing files. Say **“do it but teach me”** to have it implement a change while explaining, or **“just do it”** to leave tutoring mode for the current task.
+
+- How the agent works: [SKILL.md](skills/learn-by-doing/SKILL.md)
+- Verification guide: [references/verification.md](skills/learn-by-doing/references/verification.md)
